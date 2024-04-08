@@ -16,6 +16,35 @@
             border: none;
             border-radius: 4px;
         }
+        .input-field {
+            border-radius: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            display: block;
+            margin-bottom: 10px; /* to provide some space between the input and button */
+        }
+        .search-button {
+            
+            
+            border-radius: 20px;
+            padding: 10px 10px;
+            background-color: hsl(20, 66%, 35%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-sizing: border-box;
+            display: inline-block; 
+        }
+        .search-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            /*width: fit-content;*/
+        }
+
         </style>
     </head>
     <body>
@@ -23,7 +52,13 @@
         <div style="position: absolute; right: 0; top: 0;">
             <a href="index.html" class="button-style" style="display: block;">google search</a>
         </div>
-        
+        <div class="search-container">
+        <form action="https://www.google.com/search">
+            <input type="text" name="q" name="udm=2" class="input-field">
+            
+            <input type="submit" value="Google Image Search" class="search-button">
+        </form>
+        </div>
         
     </body>
     
