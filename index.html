@@ -2,13 +2,57 @@
 <html lang="en">
     <head>
         <title>Search</title>
+        <style>
+            .input-field {
+            border-radius: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .search-button {
+            position: fixed;
+            left: 1%;
+            bottom: -40px;
+            border-radius: 20px;
+            padding: 10px 20px;
+            background-color: hsl(120, 2%, 75%);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: #343b34; /* Darker shade for hover effect */
+        }
+
+
+            .button-style {
+            display: inline-block;
+            background-color: hsl(130, 25%, 5%); 
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+        </style>
     </head>
     <body>
-        <a href="image.html">go to google image search</a>
-        <a href="advanced.html">go to google advanced search</a>
-        <form action="https://www.google.com/search">
-            <input type="text" name="q">
-            <input type="submit" value="Google Search">
-        </form>
+        
+        <div style="position: absolute; right: 0; top: 0;">
+            <a href="image.html" class="button-style" style="display: block;">go to google image search</a>
+            <a href="advanced.html" class="button-style" style="display: block;">go to google advanced search</a>
+        </div>
+        
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <form action="https://www.google.com/search">
+                <input type="text" name="q" class="input-field">
+                <input type="submit" value="Google Search" class="search-button">
+            </form>
+        </div>
     </body>
+    
 </html>
