@@ -1,56 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Search</title>
         <style>
-        .input-field {
-            border-radius: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            display: inline-block;
-            margin-bottom: 10px; /* to provide some space between the input and button */
+            body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
         }
+        .input-field {
+            
+
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            width: 100%;
+            margin-left: 10px;
+            transition: border-color 0.3s;
+            display: inline-block;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #555;
+        }
+
+        .search-group {
+            display: flex;
+            align-items: center; /* Align items vertically */
+            margin-bottom: 20px; /* Space between each search group */
+        }
+
         .search-button {
             
             
-            border-radius: 20px;
-            padding: 10px 10px;
-            background-color: hsl(20, 66%, 35%);
+            border-radius: 4px;
+            padding: 10px 20px;
+            background-color: #007BFF;
             color: white;
             border: none;
             cursor: pointer;
-            /*box-sizing: border-box;*/
-            /*display: inline-block;*/ 
+            display: inline-block;
+            transition: background-color 0.3s; 
         }
 
         .search-button:hover {
             background-color: #343b34; /* Darker shade for hover effect */
         }
-        .search-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            /*width: fit-content;*/
-        }
-        .fit {
-            position: absolute;
-            top: 50%;
-            left: 30%;
-            transform: translate(-50%, -50%);
-            text-align: left; /* Align the text to the left */
-            width: fit-content;
+        
+        
+        .container {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            margin: 40px auto;
         }
         
         .common-heading-style {
-        font-size: 24px; 
-        font-weight: normal; 
-        font-family: Arial, sans-serif; 
-        color: #333; 
+            margin: 2;
+            font-weight: normal;
+            margin-right: 10px;
+            white-space: nowrap;
+            font-size: large;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
         }
-            .button-style {
+        @media (max-width: 768px) {
+            .search-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .common-heading-style {
+                margin-bottom: 5px;
+                margin-right: 0;
+            } 
+            .input-field {
+                margin-left: 0;
+            }
+        }
+        .button-style {
             display: inline-block;
             background-color: hsl(130, 25%, 5%); 
             color: white;
@@ -72,7 +106,7 @@
         </div>
 
 
-        <div class="fit" style="position: absolute;">
+        <!--<div class="fit" style="position: absolute;">
             <h1 class="common-heading-style">Find page with : </h1>
         
 
@@ -88,25 +122,44 @@
         
      
             <h5 class="common-heading-style">none of these words :</h5>
-        </div>
+        </div> -->
 
-        <div class="search-container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-            <form action="https://www.google.com/search">
-                <input type="text" name="q" class="input-field">
-                <input type="submit" value="Google Advanced Search" class="search-button">
-            </form>
-            <form action="https://www.google.com/search">
-                <input type="text" name="q" class="input-field">
-                <input type="submit" value="Google Advanced Search" class="search-button">
-            </form>
-            <form action="https://www.google.com/search">
-                <input type="text" name="q" class="input-field">
-                <input type="submit" value="Google Advanced Search" class="search-button">
-            </form>
-            <form action="https://www.google.com/search">
-                <input type="text" name="q" class="input-field">
-                <input type="submit" value="Google Advanced Search" class="search-button">
-            </form>
+        <div class="container" >
+            <div class="search-group">
+                <h1 class="common-heading-style">Find page with : </h1>
+                
+        
+            </div>
+            <div class="search-group">
+                <h2 class="common-heading-style">all these words : </h2>
+                <form action="https://www.google.com/search">
+                    <input type="text" name="q" class="input-field">
+                    <input type="submit" value="Google Advanced Search" class="search-button">
+                </form>
+            </div>
+            <div class="search-group">
+                <h3 class="common-heading-style">this exact word or phrase : </h3>
+                <form action="https://www.google.com/search">
+                    <input type="text" name="q" class="input-field">
+                    <input type="submit" value="Google Advanced Search" class="search-button">
+                </form>
+            </div>
+            <div class="search-group">
+                <h4 class="common-heading-style">any of these words :</h4>
+                <form action="https://www.google.com/search">
+                    <input type="text" name="q" class="input-field">
+                    <input type="submit" value="Google Advanced Search" class="search-button">
+                </form>
+
+            </div>
+            <div class="search-group">
+                <h5 class="common-heading-style">none of these words :</h5>
+                <form action="https://www.google.com/search">
+                    <input type="text" name="q" class="input-field">
+                    <input type="submit" value="Google Advanced Search" class="search-button">
+                </form>
+            </div>
+            
         </div>
         
     </body>
